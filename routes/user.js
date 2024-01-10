@@ -1,18 +1,21 @@
 import express from 'express'
+import { addData, getdata } from '../crud/userdata.js'
 
 const userRouter = express.Router()
 
-userRouter.get('/get', (req, res) => {
+userRouter.get('/get', async (req, res) => {
 
 
-    let data = [{ name: 'biren' }]
+    const data = await getdata()
 
     res.send(data)
 
 })
 
-userRouter.post('/add', (req, res) => {
-    res.send('add success')
+userRouter.post('/add', async (req, res) => {
+
+    const data = await addData(req.body)
+    res.send(data)
 })
 
 userRouter.put('/update', (req, res) => {
