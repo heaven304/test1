@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const connectDB = (url) => {
+const connectDB = () => {
 
-    mongoose.connect(url)
+    mongoose.connect('mongodb+srv://heaven:hevan%401571999@ecommerce.8vvthdz.mongodb.net/')
         .then(() => console.log('Connected!'));
 }
 
