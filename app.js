@@ -2,9 +2,11 @@ import express from 'express'
 import userRouter from './routes/user.js'
 import productRouter from './routes/product.js'
 import connectDB from './connectdb/connectdb.js'
+import cors from 'cors'
 import 'dotenv/config'
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 const url = process.env.DATABASE_URL
 

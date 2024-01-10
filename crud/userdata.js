@@ -13,9 +13,9 @@ const userModal = mongoose.model('user', userSchema)
 
 
 const addData = (data) => {
+    console.log(data)
     try {
         const userDoc = new userModal(data)
-
         const result = userDoc.save()
         return result
     } catch (err) {
